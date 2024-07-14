@@ -1,28 +1,28 @@
-import { useState } from "react";
-import { useAuth } from "./useAuth";
+import React, { useState } from "react";
+import { useAuth } from "../../utilities/AuthContext";
 
-export const LoginPage = () => {
-  const [username, setUsername] = useState("");
+export const Login = () => {
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { login } = useAuth();
   const handleLogin = async (e) => {
     e.preventDefault();
-    if (username === "user" && password === "password") {
-      await login({ username });
+    if (email === "email" && password === "password") {
+      await login({ email });
     } else {
-      alert("Invalid username or password");
+      alert("Invalid email or password");
     }
   };
   return (
     <div>
       <form onSubmit={handleLogin}>
         <div>
-          <label htmlFor="username">Username:</label>
+          <label htmlFor="email">Email:</label>
           <input
-            id="username"
+            id="email"
             type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
         </div>
         <div>
