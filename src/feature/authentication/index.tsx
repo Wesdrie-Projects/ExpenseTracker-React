@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useAuth } from "../../utilities/AuthContext";
 
-export const Login = () => {
+export function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { login } = useAuth();
@@ -38,4 +38,4 @@ export const Login = () => {
       </form>
     </div>
   );
-};
+}

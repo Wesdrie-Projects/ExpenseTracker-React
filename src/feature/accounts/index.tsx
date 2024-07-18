@@ -1,9 +1,9 @@
 import React from "react";
 
-export const Accounts = () => {
+export function Accounts() {
   return (
     <div>
       <label>Accounts</label>
     </div>
   );
-};
+}
